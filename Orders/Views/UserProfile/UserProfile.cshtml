@@ -1,0 +1,52 @@
+﻿@using Orders.ViewModels
+@model Orders.ViewModels.UserProfileViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Profile for " + Model.Email;
+    Layout = "_Layout";
+}
+
+<h2>Profile for @Model.Email</h2>
+
+<div class="body-content">
+    <div class="col-md-12">
+        <img src="@Model.AvatarUri" alt="Avatar" class="img-rounded" />
+    </div>
+
+    <div class="col-md-10">
+        <h3>Firstname</h3>
+        @Model.FirstName
+        <h3>Lastname</h3>
+        @Model.LastName
+        <h3>E-mail</h3>
+        @Model.Email
+    </div>
+
+    <div class="col-md-10">
+        <h3>Roles</h3>
+        <ul>
+            @foreach (var role in Model.Roles)
+            {
+                <li>@role</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-md-10">
+        <h3>Orders</h3>
+        <ul>
+            @foreach (var order in Model.Orders)
+            {
+                <li>@order</li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <hr />
+    <div class="col-md-12">
+        <a asp-action="Logout" asp-controller="Account" class="btn btn-default" style="margin-top: 10px">Logout</a>
+    </div>
+</div>

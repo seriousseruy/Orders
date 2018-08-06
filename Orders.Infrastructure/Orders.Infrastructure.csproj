@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="9707175a-ee4e-4619-8dc5-d42ac9999331_fc22dd03-c278-45d6-b0dc-36c5472f0547.pem" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="9707175a-ee4e-4619-8dc5-d42ac9999331_fc22dd03-c278-45d6-b0dc-36c5472f0547.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.2.4" />
+  </ItemGroup>
+
+</Project>
